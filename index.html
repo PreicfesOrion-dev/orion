@@ -22,7 +22,7 @@
       <li><a href="#faq">Preguntas frecuentes</a></li>
     </ul>
     <div class="nav-cta">
-      <a class="btn btn-primary btn-sm" href="https://wa.me/message/YE4T5SMSXYHFE1" target="_blank" rel="noopener">Inscríbete</a>
+      <button class="btn btn-primary btn-sm" id="navInscribeBtn" type="button">Inscríbete</button>
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
@@ -355,6 +355,61 @@
     <p class="footer-bottom">© 2026 Orión Pre-ICFES.</p>
   </div>
 </footer>
+<div class="modal-overlay" id="enrollOverlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="enrollTitle">
+    <button class="modal-close" id="enrollClose" type="button" aria-label="Cerrar">&times;</button>
+
+    <form class="enroll-form" id="enrollForm" novalidate>
+      <h3 id="enrollTitle">Inscríbete</h3>
+      <p class="enroll-sub">Cuéntanos un poco de ti y te contactamos para ayudarte a decidir.</p>
+
+      <div class="enroll-row">
+        <label class="enroll-field">
+          <span>Nombre</span>
+          <input type="text" name="nombre" required autocomplete="given-name" />
+        </label>
+        <label class="enroll-field">
+          <span>Apellido</span>
+          <input type="text" name="apellido" required autocomplete="family-name" />
+        </label>
+      </div>
+
+      <label class="enroll-field">
+        <span>Correo</span>
+        <input type="email" name="correo" required autocomplete="email" />
+      </label>
+
+      <label class="enroll-field">
+        <span>Número de teléfono</span>
+        <input type="tel" name="telefono" required autocomplete="tel" placeholder="300 123 4567" />
+      </label>
+
+      <label class="enroll-field">
+        <span>Cohorte a la que quieres aplicar</span>
+        <select name="cohorte" id="enrollCohortSelect" required></select>
+      </label>
+
+      <label class="enroll-field">
+        <span>Grado del estudiante</span>
+        <select name="grado" required>
+          <option value="" disabled selected>Selecciona un grado</option>
+          <option value="9">9°</option>
+          <option value="10">10°</option>
+          <option value="11">11°</option>
+          <option value="egresado">Ya soy egresado / validación</option>
+        </select>
+      </label>
+
+      <button type="submit" class="btn btn-primary enroll-submit">Enviar</button>
+    </form>
+
+    <div class="enroll-success" id="enrollSuccess" hidden>
+      <h3>¡Listo!</h3>
+      <p id="enrollSuccessMsg"></p>
+      <button type="button" class="btn btn-primary" id="enrollSuccessClose">Cerrar</button>
+    </div>
+  </div>
+</div>
 <script src="js/main.js" defer></script>
 </body>
 </html>
