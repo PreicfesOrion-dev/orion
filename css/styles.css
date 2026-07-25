@@ -366,7 +366,7 @@
   .review-bubble:nth-child(6n) { background: var(--swatch-cream); }
   .review-bubble:nth-child(6n+4), .review-bubble:nth-child(6n) { color: #1F2A33; }
 
-  .reviews-empty { text-align: center; color: var(--muted); font-size: 0.96rem; padding: 30px 20px; }
+  .reviews-empty { width: 100%; max-width: 480px; margin: 0 auto; text-align: center; color: var(--muted); font-size: 0.96rem; padding: 30px 20px; }
 
   .reviews-cta { display: flex; justify-content: center; }
 

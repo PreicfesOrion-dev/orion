@@ -123,11 +123,13 @@
         if (reviews.length === 0) {
           reviewsTrack.style.animation = 'none';
           reviewsTrack.style.width = '100%';
+          reviewsTrack.style.justifyContent = 'center';
           reviewsTrack.innerHTML = '<p class="reviews-empty">Aún no hay reseñas — ¡sé el primero en compartir tu experiencia!</p>';
           return;
         }
         reviewsTrack.style.animation = '';
         reviewsTrack.style.width = '';
+        reviewsTrack.style.justifyContent = '';
         var html = reviews.map(function (r) {
           return '<blockquote class="review-bubble"><p>“' + escapeHtml(r.comentario) + '”</p><cite class="review-name">' + escapeHtml(r.nombre) + '</cite></blockquote>';
         }).join('');
