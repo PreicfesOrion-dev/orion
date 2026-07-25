@@ -30,69 +30,6 @@
       });
     }
 
-    var inscribeBtn = document.getElementById('navInscribeBtn');
-    var enrollOverlay = document.getElementById('enrollOverlay');
-    var enrollClose = document.getElementById('enrollClose');
-    var enrollForm = document.getElementById('enrollForm');
-    var enrollSuccess = document.getElementById('enrollSuccess');
-    var enrollSuccessMsg = document.getElementById('enrollSuccessMsg');
-    var enrollSuccessClose = document.getElementById('enrollSuccessClose');
-    var enrollCohortSelect = document.getElementById('enrollCohortSelect');
-
-    if (inscribeBtn && enrollOverlay && enrollForm) {
-      var populateCohorts = function () {
-        enrollCohortSelect.innerHTML = '';
-        document.querySelectorAll('.program-option').forEach(function (program) {
-          var includes = program.querySelector('.program-includes');
-          if (!includes || includes.classList.contains('program-includes--soon')) return;
-          var name = program.querySelector('.program-name');
-          var meta = program.querySelector('.program-meta');
-          if (!name) return;
-          var option = document.createElement('option');
-          option.value = name.textContent.trim();
-          option.textContent = meta ? (name.textContent.trim() + ' — ' + meta.textContent.trim()) : name.textContent.trim();
-          enrollCohortSelect.appendChild(option);
-        });
-      };
-
-      var openModal = function () {
-        populateCohorts();
-        enrollForm.hidden = false;
-        enrollSuccess.hidden = true;
-        enrollOverlay.hidden = false;
-        document.body.style.overflow = 'hidden';
-        var firstField = enrollForm.querySelector('input');
-        if (firstField) firstField.focus();
-      };
-
-      var closeModal = function () {
-        enrollOverlay.hidden = true;
-        document.body.style.overflow = '';
-      };
-
-      inscribeBtn.addEventListener('click', openModal);
-      enrollClose.addEventListener('click', closeModal);
-      enrollSuccessClose.addEventListener('click', closeModal);
-      enrollOverlay.addEventListener('click', function (e) {
-        if (e.target === enrollOverlay) closeModal();
-      });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && !enrollOverlay.hidden) closeModal();
-      });
-
-      enrollForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        if (!enrollForm.reportValidity()) return;
-        var data = new FormData(enrollForm);
-        var nombre = data.get('nombre');
-        var telefono = data.get('telefono');
-        enrollSuccessMsg.textContent = 'Gracias, ' + nombre + '. Uno de nuestros asesores te ayudará en la decisión al número ' + telefono + '.';
-        enrollForm.hidden = true;
-        enrollSuccess.hidden = false;
-        enrollForm.reset();
-      });
-    }
-
     var reviewsTrack = document.getElementById('reviewsTrack');
     if (reviewsTrack) {
       var reviewsStorageKey = 'orionReviews';
