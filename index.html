@@ -19,6 +19,7 @@
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#team">Conoce nuestro equipo</a></li>
       <li><a href="#programa">Programas</a></li>
+      <li><a href="#resenas">Reseñas y recomendaciones</a></li>
       <li><a href="#faq">Preguntas frecuentes</a></li>
     </ul>
     <div class="nav-cta">
@@ -253,6 +254,26 @@
     </div>
   </section>
 
+  <section id="resenas">
+    <div class="wrap">
+      <div class="section-head fade">
+        <span class="tag">Reseñas y recomendaciones</span>
+        <h2>Lo que dicen nuestros estudiantes</h2>
+        <p>Historias reales de estudiantes que ya viven su cambio con Preicfes Orión.</p>
+      </div>
+    </div>
+
+    <div class="reviews-marquee-wrap fade">
+      <div class="reviews-track" id="reviewsTrack"></div>
+    </div>
+
+    <div class="wrap">
+      <div class="reviews-cta fade">
+        <button class="btn btn-primary" id="openReviewBtn" type="button">Deja tu reseña</button>
+      </div>
+    </div>
+  </section>
+
   <section id="programa">
     <div class="wrap">
       <div class="section-head fade">
@@ -407,6 +428,35 @@
       <h3>¡Listo!</h3>
       <p id="enrollSuccessMsg"></p>
       <button type="button" class="btn btn-primary" id="enrollSuccessClose">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="reviewOverlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="reviewTitle">
+    <button class="modal-close" id="reviewClose" type="button" aria-label="Cerrar">&times;</button>
+
+    <form class="enroll-form" id="reviewForm" novalidate>
+      <h3 id="reviewTitle">Deja tu reseña</h3>
+      <p class="enroll-sub">Cuéntale a futuros estudiantes cómo Preicfes Orión te ayudó a llegar más lejos.</p>
+
+      <label class="enroll-field">
+        <span>Nombre</span>
+        <input type="text" name="nombre" required autocomplete="name" maxlength="60" />
+      </label>
+
+      <label class="enroll-field">
+        <span>Tu comentario</span>
+        <textarea name="comentario" rows="4" required maxlength="280" placeholder="Preicfes Orión me ayudó a..."></textarea>
+      </label>
+
+      <button type="submit" class="btn btn-primary enroll-submit">Publicar reseña</button>
+    </form>
+
+    <div class="enroll-success" id="reviewSuccess" hidden>
+      <h3>¡Gracias!</h3>
+      <p>Tu reseña ya está en el carrusel. Gracias por compartir tu experiencia con Preicfes Orión.</p>
+      <button type="button" class="btn btn-primary" id="reviewSuccessClose">Cerrar</button>
     </div>
   </div>
 </div>

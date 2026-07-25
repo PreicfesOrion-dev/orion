@@ -337,6 +337,39 @@
   .faq-item p a { color: var(--sage); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 
 
+  /* ---------- RESEÑAS ---------- */
+  #resenas { padding-bottom: clamp(52px,7vw,84px); }
+  .reviews-marquee-wrap {
+    overflow: hidden;
+    margin: 8px 0 30px;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  }
+  .reviews-track { display: flex; gap: 20px; width: max-content; animation: reviews-scroll 32s linear infinite; }
+  .reviews-track:hover { animation-play-state: paused; }
+  @keyframes reviews-scroll { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+  .review-bubble {
+    flex: 0 0 auto; width: min(320px, 78vw);
+    padding: 22px 22px 20px; border-radius: 18px 18px 18px 4px;
+    background: var(--swatch-sage); color: #fff;
+    box-shadow: var(--shadow-2);
+  }
+  .review-bubble p { font-size: 0.94rem; line-height: 1.55; }
+  .review-bubble .review-name { display: block; margin-top: 14px; font-weight: 700; font-size: 0.85rem; }
+
+  .review-bubble:nth-child(6n+1) { background: var(--swatch-sage); }
+  .review-bubble:nth-child(6n+2) { background: var(--swatch-coral); }
+  .review-bubble:nth-child(6n+3) { background: var(--swatch-navy); }
+  .review-bubble:nth-child(6n+4) { background: var(--swatch-gold); }
+  .review-bubble:nth-child(6n+5) { background: var(--swatch-black); }
+  .review-bubble:nth-child(6n) { background: var(--swatch-cream); }
+  .review-bubble:nth-child(6n+4), .review-bubble:nth-child(6n) { color: #1F2A33; }
+
+  .reviews-empty { text-align: center; color: var(--muted); font-size: 0.96rem; padding: 30px 20px; }
+
+  .reviews-cta { display: flex; justify-content: center; }
+
   /* ---------- FOOTER ---------- */
   footer { padding: 44px 0 30px; }
   .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; padding-bottom: 30px; border-bottom: 1px solid var(--border); }
@@ -363,12 +396,13 @@
 
   .enroll-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .enroll-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; font-size: 0.85rem; font-weight: 600; color: var(--navy); }
-  .enroll-field input, .enroll-field select {
+  .enroll-field input, .enroll-field select, .enroll-field textarea {
     font-family: var(--font-ui); font-size: 0.95rem; font-weight: 400; color: var(--ink);
     padding: 10px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-strong);
     background: var(--paper);
   }
-  .enroll-field input:focus, .enroll-field select:focus { outline: 2px solid var(--sage); outline-offset: 1px; }
+  .enroll-field textarea { resize: vertical; min-height: 90px; }
+  .enroll-field input:focus, .enroll-field select:focus, .enroll-field textarea:focus { outline: 2px solid var(--sage); outline-offset: 1px; }
 
   .enroll-submit { width: 100%; margin-top: 6px; }
 
