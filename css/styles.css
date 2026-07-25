@@ -285,8 +285,8 @@
 
   /* ---------- TEAM ORIÓN ---------- */
   .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px; }
-  .team-card:nth-child(n+9) { display: none; }
-  .team-grid.is-expanded .team-card:nth-child(n+9) { display: block; }
+  .team-card:nth-child(n+10) { display: none; }
+  .team-grid.is-expanded .team-card:nth-child(n+10) { display: block; }
   .team-meta { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(244,245,243,0.18); display: flex; flex-direction: column; align-items: center; gap: 10px; }
   .team-meta .row { display: flex; flex-direction: column; align-items: center; gap: 2px; }
   .team-meta .k { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(244,245,243,0.55); }
